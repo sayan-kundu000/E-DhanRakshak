@@ -8,7 +8,7 @@ from werkzeug.exceptions import HTTPException
 logger = logging.getLogger(__name__)
 
 class AppException(Exception):
-    """Base application exception for E-Rakshak custom business error logic."""
+    """Base application exception for E-DhanRakshak custom business error logic."""
     def __init__(self, message, status_code=400, code="APP_ERROR", details=None):
         super().__init__()
         self.message = message

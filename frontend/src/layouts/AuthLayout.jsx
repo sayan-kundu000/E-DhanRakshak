@@ -12,7 +12,7 @@ export const AuthLayout = () => {
       <header className="p-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <Shield className="w-6 h-6 text-brand-600 dark:text-brand-400" />
-          <span className="font-display font-bold text-lg tracking-tight text-brand-800 dark:text-white">E-Rakshak</span>
+          <span className="font-display font-bold text-lg tracking-tight text-brand-800 dark:text-white">E-DhanRakshak</span>
         </Link>
         <button
           onClick={toggleTheme}
@@ -30,7 +30,7 @@ export const AuthLayout = () => {
             <div className="w-12 h-12 bg-brand-50 dark:bg-brand-950 flex items-center justify-center rounded-xl mb-4">
               <Shield className="w-6 h-6 text-brand-600 dark:text-brand-400" />
             </div>
-            <h1 className="font-display font-bold text-2xl text-slate-900 dark:text-white text-center">E-Rakshak Portal</h1>
+            <h1 className="font-display font-bold text-2xl text-slate-900 dark:text-white text-center">E-DhanRakshak Portal</h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm mt-1 text-center">Secure incident triage and public safety board</p>
           </div>
 

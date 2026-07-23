@@ -109,7 +109,7 @@ class ReportService:
         # Build a beautifully formatted text report that simulates a PDF summary
         pdf_text = f"""
 ========================================================================
-                      E-RAKSHAK SAFETY REPORT SUMMARY
+                      E-DHANRAKSHAK SAFETY REPORT SUMMARY
 ========================================================================
 Interval: {stats['interval'].upper()}
 Report Generated At: {datetime.now(timezone.utc).isoformat()}

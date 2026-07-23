@@ -169,7 +169,7 @@ export const Dashboard = () => {
         <Card className="md:col-span-2 space-y-4">
           <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white">Report System Issues</h3>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            Submit local issues directly to E-Rakshak control centers. Our analytics dispatch engine will score the risk severity and map resources.
+            Submit local issues directly to E-DhanRakshak control centers. Our analytics dispatch engine will score the risk severity and map resources.
           </p>
           <Button variant="primary" onClick={() => setReportModalOpen(true)}>
             <Plus className="w-4.5 h-4.5" />

@@ -13,7 +13,7 @@ export const PublicLayout = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Shield className="w-8 h-8 text-brand-600 dark:text-brand-400" />
-            <span className="font-display font-bold text-xl tracking-tight text-brand-800 dark:text-white">E-Rakshak</span>
+            <span className="font-display font-bold text-xl tracking-tight text-brand-800 dark:text-white">E-DhanRakshak</span>
           </div>
           
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
@@ -46,7 +46,7 @@ export const PublicLayout = () => {
       {/* Footer System */}
       <footer className="bg-slate-100 dark:bg-navy-950 border-t border-slate-200/50 dark:border-slate-800/50 py-8 text-center text-xs text-slate-500 dark:text-slate-400">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} E-Rakshak. Enterprise Community Safety Platform.</p>
+          <p>© {new Date().getFullYear()} E-DhanRakshak. Enterprise Community Safety Platform.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:underline">Privacy Policy</a>
             <a href="#" className="hover:underline">Terms of Service</a>

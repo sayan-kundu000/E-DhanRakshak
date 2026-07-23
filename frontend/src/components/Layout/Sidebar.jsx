@@ -36,7 +36,7 @@ export const Sidebar = ({ isOpen, onClose }) => {
       <div className="h-16 flex items-center justify-between px-6 border-b border-slate-200/50 dark:border-slate-800/50">
         <Link to="/" className="flex items-center gap-3">
           <Shield className="w-6 h-6 text-brand-600 dark:text-brand-400" />
-          <span className="font-display font-bold text-lg text-brand-800 dark:text-white">E-Rakshak</span>
+          <span className="font-display font-bold text-lg text-brand-800 dark:text-white">E-DhanRakshak</span>
         </Link>
         <button onClick={onClose} className="md:hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
           <X className="w-5 h-5" />

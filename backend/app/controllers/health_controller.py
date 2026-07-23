@@ -12,7 +12,7 @@ def simple_health_check():
     """Simple ping-pong health check route for container monitors."""
     return jsonify({
         "success": True,
-        "message": "E-Rakshak API server is running."
+        "message": "E-DhanRakshak API server is running."
     }), 200
 
 

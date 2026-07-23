@@ -7,7 +7,7 @@ def test_simple_health_check(client):
     
     data = json.loads(response.data)
     assert data["success"] is True
-    assert "E-Rakshak API server is running" in data["message"]
+    assert "E-DhanRakshak API server is running" in data["message"]
 
 
 def test_detailed_health_check_sqlite_fallback(client, app):
