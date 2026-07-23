@@ -45,12 +45,22 @@ def test_incident_creation_and_risk_scoring(client, db, session):
     }
     
     headers = {"Authorization": f"Bearer {citizen_token}"}
-    response = client.post(
-        "/api/v1/incidents",
-        data=json.dumps(payload),
-        headers=headers,
-        content_type="application/json"
-    )
+    
+    from unittest.mock import patch
+    import datetime as dt
+    mock_now = dt.datetime(2026, 7, 23, 12, 0, 0, tzinfo=dt.timezone.utc)
+    
+    with patch("app.services.incident_service.datetime") as mock_datetime:
+        mock_datetime.now.return_value = mock_now
+        mock_datetime.timezone = dt.timezone
+        mock_datetime.timedelta = dt.timedelta
+        
+        response = client.post(
+            "/api/v1/incidents",
+            data=json.dumps(payload),
+            headers=headers,
+            content_type="application/json"
+        )
     
     assert response.status_code == 201
     data = json.loads(response.data)

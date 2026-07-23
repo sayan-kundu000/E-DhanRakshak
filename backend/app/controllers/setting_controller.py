@@ -24,6 +24,31 @@ def list_system_settings():
     )
 
 
+@setting_bp.route("/settings/preferences", methods=["GET"])
+@jwt_required()
+def get_user_preferences():
+    """Retrieves preference options of the current user session."""
+    user_id = get_jwt_identity()
+    pref = setting_service.get_user_preference(user_id)
+    return success_response(
+        data=pref_schema.dump(pref.preferences_json),
+        message="User preferences retrieved."
+    )
+
+
+@setting_bp.route("/settings/preferences", methods=["PUT"])
+@jwt_required()
+def update_user_preferences():
+    """Modifies user preferences configuration flags."""
+    user_id = get_jwt_identity()
+    validated_data = pref_schema.load(request.get_json())
+    pref = setting_service.set_user_preference(user_id, validated_data)
+    return success_response(
+        data=pref_schema.dump(pref.preferences_json),
+        message="User preferences updated successfully."
+    )
+
+
 @setting_bp.route("/settings/<string:key>", methods=["GET"])
 @jwt_required()
 def get_system_setting(key):
@@ -49,29 +74,4 @@ def update_system_setting(key):
     return success_response(
         data=setting_response_schema.dump(setting),
         message="System setting successfully modified."
-    )
-
-
-@setting_bp.route("/settings/preferences", methods=["GET"])
-@jwt_required()
-def get_user_preferences():
-    """Retrieves preference options of the current user session."""
-    user_id = get_jwt_identity()
-    pref = setting_service.get_user_preference(user_id)
-    return success_response(
-        data=pref_schema.dump(pref.preferences_json),
-        message="User preferences retrieved."
-    )
-
-
-@setting_bp.route("/settings/preferences", methods=["PUT"])
-@jwt_required()
-def update_user_preferences():
-    """Modifies user preferences configuration flags."""
-    user_id = get_jwt_identity()
-    validated_data = pref_schema.load(request.get_json())
-    pref = setting_service.set_user_preference(user_id, validated_data)
-    return success_response(
-        data=pref_schema.dump(pref.preferences_json),
-        message="User preferences updated successfully."
     )
